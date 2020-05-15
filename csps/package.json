@@ -1,0 +1,12 @@
+{
+  "name": "csps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "lint": "eslint **/*.js"
+  },
+  "author": "Sue Duclos",
+  "license": "ISC"
+}
