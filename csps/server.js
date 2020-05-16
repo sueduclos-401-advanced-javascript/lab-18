@@ -1,14 +1,18 @@
 'use strict';
 
-const net = require('net');
-const server = net.createServer();
+// const net = require('net');
+// const server = net.createServer();
+
+const socketio = require('socket.io');
+const server = socketio(port);
+
 
 let port = process.env.PORT || 3000;
-server.listen(port, () => {
-  console.log('Server is up and running on port', port);
-});
+// server.listen(port, () => {
+//   console.log('Server is up and running on port', port);
+// });
 
-let socketPool = [];
+// let socketPool = [];
 
 const logger = (payload) => {
   let parsed = JSON.parse(payload.toString());
@@ -36,6 +40,6 @@ const logger = (payload) => {
 
 server.on('connection', (socket) => {
   console.log('Socket connected to server');
-  socketPool.push(socket);
+  // socketPool.push(socket);
   socket.on('data', logger);
 });
